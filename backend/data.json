@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "id": 1711960577824,
+      "name": "Himanshu Sahoo",
+      "email": "himanshusahoo2019@gmail.com",
+      "password": "$2b$10$Qb8purI8Iptu6r5LxjJnDul.mq9Ch9ZDZYYhgZf6xKi6A9/qRGv3y"
+    },
+    {
+      "id": 1711998975153,
+      "name": "Subham",
+      "email": "subham@gamil.com",
+      "password": "$2b$10$k00g9VatgNyBwiaVUWMIHuTQzROL1f1g/3h/U90kI2rxutO5bUFja"
+    },
+    {
+      "id": 1712034704392,
+      "name": "Badal Kumar Sahoo",
+      "email": "badal@gmail.com",
+      "password": "$2b$10$sw/mQbD5BBApLZqQ2VeZ0.HXE/h8ydOXX5WCAWVLSjZHfyHDyadT."
+    }
+  ],
+  "orders": []
+}
