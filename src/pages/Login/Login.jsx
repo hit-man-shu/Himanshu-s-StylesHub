@@ -74,13 +74,16 @@ export const action = async ({ request }) => {
     password: data.get("password"),
   };
 
-  const response = await fetch("http://localhost:8000/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
+  const response = await fetch(
+    "https://himanshu-s-styleshub.onrender.com/login",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(authData),
     },
-    body: JSON.stringify(authData),
-  });
+  );
 
   if (response.status === 400 || response.status === 401) {
     return response;

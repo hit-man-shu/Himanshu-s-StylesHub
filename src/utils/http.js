@@ -70,11 +70,15 @@ export const saveCartToLocalStorage = (cartItems) => {
 // send Order Data
 export const sendOrderData = async ({ postData, token }) => {
   try {
-    const resp = await axios.post("http://localhost:8000/order", postData, {
-      headers: {
-        Authorization: token,
+    const resp = await axios.post(
+      "https://himanshu-s-styleshub.onrender.com/order",
+      postData,
+      {
+        headers: {
+          Authorization: token,
+        },
       },
-    });
+    );
     return resp.data;
   } catch (error) {
     throw error;
