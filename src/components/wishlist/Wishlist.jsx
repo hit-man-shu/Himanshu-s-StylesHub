@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { wishClose } from "../../store/modalSlice";
 import WishItem from "./WishItem";
+import {
+  saveCartToLocalStorage,
+  saveWishItemToLocalStorage,
+} from "../../utils/http";
 
 const Wishlist = () => {
   const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.cartItems);
   const wishItems = useSelector((state) => state.wish.wishItems);
+
+  useEffect(() => {
+    saveCartToLocalStorage(cartItems);
+    saveWishItemToLocalStorage(wishItems);
+  }, [cartItems, wishItems]);
 
   const handleCloseWishlist = () => {
     dispatch(wishClose());

@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { getSingleProduct } from "../../utils/http";
+import {
+  getSingleProduct,
+  saveCartToLocalStorage,
+  saveWishItemToLocalStorage,
+} from "../../utils/http";
 import { FaStar } from "react-icons/fa";
 import Loader from "../../UI/Loader";
 import ErrorBlock from "../../UI/ErrorBlock";
 import { currencyFormatter } from "../../validation";
 import { MdOutlineFavorite } from "react-icons/md";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../../store/cartSlice";
 import { toast } from "react-toastify";
 import { addWishItem } from "../../store/wishItemSlice";
@@ -15,6 +19,14 @@ import { addWishItem } from "../../store/wishItemSlice";
 const Product = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
+
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const wishItems = useSelector((state) => state.wish.wishItems);
+
+  useEffect(() => {
+    saveCartToLocalStorage(cartItems);
+    saveWishItemToLocalStorage(wishItems);
+  }, [cartItems, wishItems]);
 
   const { data, isError, error, isPending } = useQuery({
     queryKey: ["product", { id }],
