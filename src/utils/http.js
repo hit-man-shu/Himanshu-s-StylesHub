@@ -67,6 +67,10 @@ export const saveCartToLocalStorage = (cartItems) => {
   localStorage.setItem("cartItems", JSON.stringify(cartItems));
 };
 
+export const saveWishItemToLocalStorage = (wishItems) => {
+  localStorage.setItem("wishItems", JSON.stringify(wishItems));
+};
+
 // send Order Data
 export const sendOrderData = async ({ postData, token }) => {
   try {

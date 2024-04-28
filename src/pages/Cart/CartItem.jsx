@@ -47,7 +47,7 @@ const CartItem = ({ cart }) => {
       </div>
 
       <span className="w-1/5 text-center text-sm font-semibold">
-        ${cart?.price}
+        {currencyFormatter.format(cart?.price * 10)}
       </span>
       <span className="w-1/5 text-center text-sm font-semibold">
         {currencyFormatter.format(cart?.price * cart?.quantity * 10)}

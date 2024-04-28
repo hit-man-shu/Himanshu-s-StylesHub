@@ -5,12 +5,13 @@ const CheckoutItem = ({ item }) => {
   return (
     <div className=" flex flex-col gap-4 rounded-lg bg-white sm:flex-row">
       <img
-        className="object-covermd:h-24 mx-auto w-20 rounded-md border "
+        className="object-covermd:h-24 mx-auto w-20 rounded-md "
         src={item.image}
         alt={item.title}
       />
       <div className="flex w-full flex-col px-4 py-4">
         <span className="font-semibold">{item.title}</span>
+        <span className="font-semibold">{item.quantity}</span>
         <p className="text-lg font-bold">
           {currencyFormatter.format(item.price * 10)}
         </p>

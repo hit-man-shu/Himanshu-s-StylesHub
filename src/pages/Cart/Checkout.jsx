@@ -12,6 +12,7 @@ import { useRouteLoaderData, useNavigate } from "react-router-dom";
 import { sendOrderData } from "../../utils/http";
 import { emptyCart } from "../../store/cartSlice";
 import ErrorBlock from "../../UI/ErrorBlock";
+import { toast } from "react-toastify";
 
 const Checkout = () => {
   const isOpen = useSelector((state) => state.modal.isOpen);
@@ -24,6 +25,7 @@ const Checkout = () => {
     mutationFn: sendOrderData,
     onSuccess: () => {
       dispatch(emptyCart());
+      toast.success("Order placed successfully!");
       navigate("/");
     },
   });

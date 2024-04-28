@@ -10,6 +10,7 @@ import { MdOutlineFavorite } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { addItem } from "../../store/cartSlice";
 import { toast } from "react-toastify";
+import { addWishItem } from "../../store/wishItemSlice";
 
 const Product = () => {
   const { id } = useParams();
@@ -23,6 +24,11 @@ const Product = () => {
   const handleToCart = (data) => {
     toast.success("Item added to cart successfully!");
     dispatch(addItem(data));
+  };
+
+  const handleAddToWish = () => {
+    toast.success("Item added to wishlist successfully!");
+    dispatch(addWishItem(data));
   };
 
   let content;
@@ -78,7 +84,11 @@ const Product = () => {
               >
                 Add to cart
               </button>
-              <button className="ml-4 inline-flex h-10 w-10 items-center justify-center rounded-full border-0 bg-gray-200 p-0 text-gray-500">
+
+              <button
+                onClick={handleAddToWish}
+                className="ml-4 inline-flex h-10 w-10 items-center justify-center rounded-full border-0 bg-gray-200 p-0 text-gray-500 active:animate-ping active:bg-pink-700"
+              >
                 <MdOutlineFavorite className="h-5 w-5" />
               </button>
             </div>
