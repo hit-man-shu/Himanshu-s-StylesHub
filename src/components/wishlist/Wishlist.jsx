@@ -53,7 +53,7 @@ const Wishlist = () => {
                 wishItems.map((item) => <WishItem wishItem={item} />)
               ) : (
                 <tr>
-                  <h1 className=" my-3 font-bold text-red-600">
+                  <h1 className=" my-3 p-4 font-bold text-red-600">
                     Your Wishlist is empty! No Items are added in your Wishlist.
                   </h1>
                 </tr>

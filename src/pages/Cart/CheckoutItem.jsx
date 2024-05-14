@@ -11,7 +11,12 @@ const CheckoutItem = ({ item }) => {
       />
       <div className="flex w-full flex-col px-4 py-4">
         <span className="font-semibold">{item.title}</span>
-        <span className="font-semibold">{item.quantity}</span>
+        <div className="font-semibold flex justify-between">
+          <span>{item.quantity}</span>
+          <span>
+            {currencyFormatter.format(item?.price * item?.quantity * 10)}
+          </span>
+        </div>
         <p className="text-lg font-bold">
           {currencyFormatter.format(item.price * 10)}
         </p>

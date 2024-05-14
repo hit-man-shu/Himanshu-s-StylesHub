@@ -32,7 +32,7 @@ const Footer = () => {
         </div>
 
         <p className="mt-6 text-sm text-gray-500 dark:text-gray-400 lg:mt-0">
-          © Copyright 2023 Himanshu
+          © Copyright 2024 Himanshu
         </p>
       </div>
     </footer>
